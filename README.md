@@ -1,0 +1,1 @@
+# Stgb-assurance
