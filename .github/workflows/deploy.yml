@@ -1,0 +1,36 @@
+name: Deploy to AlwaysData via FTP
+
+on:
+  push:
+    branches:
+      - main # branche à déployer
+
+jobs:
+  ftp-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Deploy via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          server: ${{ secrets.AD_FTP_HOST }}
+          username: ${{ secrets.AD_FTP_USER }}
+          password: ${{ secrets.AD_FTP_PASS }}
+
+          # Dossier local à envoyer (ton site)
+          local-dir: ./site/
+
+          # Dossier du serveur sur AlwaysData
+          server-dir: /www/
+
+          # options
+          protocol: ftp
+          state-name: .ftp-deploy-sync-state.json
+          exclude: |
+            **/.git*
+            **/.github*
+            **/node_modules/
+            **/*.md
