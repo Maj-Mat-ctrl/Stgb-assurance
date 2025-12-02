@@ -25,15 +25,31 @@
         </nav>
         <section class="page-section connexion">
             <div>
-            <form name="connexion" id="connexion" method="post" action="inscrire.php">
-                <p>	
-                    <label>Login</label> 
+            <?php
+            session_start();
+            if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['ok'])) {
+                $login = $_POST['login'];
+                $mdp = $_POST['mdp'];
+
+                // Vérification simple (à remplacer par une vraie authentification)
+                if ($login === 'admin' && $mdp === 'password') {
+                    $_SESSION['loggedin'] = true;
+                    header('Location: admin.php');
+                    exit;
+                } else {
+                    echo '<p style="color:red;">Login ou mot de passe incorrect.</p>';
+                }
+            }
+            ?>
+            <form name="connexion" id="connexion" method="post" action="">
+                <p>
+                    <label>Login</label>
                     <input type="text" name="login" id="login" placeholder="Entrez votre login" />
                     <br />
-                    <label>Mot de passe</label> 
-                    <input type="password" name="mdp" id="mdp" placeholder="Entrez votre password" />
+                    <label>Mot de passe</label>
+                    <input type="password" name="mdp" id="mdp" placeholder="Entrez votre password"/>
                     <br />
-                    <input type="submit" name="ok" id="ok" value="Validez votre identification" />
+                    <input type="submit" name="ok" id="ok" value="Validez votre identification"/>
                 </p>
             </form>
             </div>

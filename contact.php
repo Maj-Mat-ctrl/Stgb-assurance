@@ -80,8 +80,21 @@
                                     <textarea id="message" name="message" placeholder="Votre message..."  required maxlength="500"></textarea>
 
                                     <button type="submit">Envoyer</button>
-                                                        
+
                              </p>
+                            <p class="mb-0">
+                                <small><em>Pour se désabonner d'un contrat</em></small>
+                                <br />
+                                <form action="unsubscribe.php" method="post">
+                                    <label for="contract_id">Numéro de contrat :</label>
+                                    <input type="text" id="contract_id" name="contract_id" placeholder="Entrez votre numéro de contrat" required maxlength="50">
+                                    <br />
+                                    <label for="email_unsub">Email :</label>
+                                    <input type="email" id="email_unsub" name="email_unsub" placeholder="Votre adresse email" required maxlength="50">
+                                    <br />
+                                    <button type="submit">Se désabonner</button>
+                                </form>
+                            </p>
                             <p class="mb-0">
                                 <small><em>Pour nous appeler </em></small>
                                 <br />

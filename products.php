@@ -23,6 +23,9 @@
         <nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
             <?php include_once("architecture/nav.php"); ?>
         </nav>
+       
+        <!-- Section Accueil avec Actualités -->
+        
         <section class="page-section">
             <div class="container">
                 <div class="product-item">
@@ -36,7 +39,22 @@
                     </div>
                     <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="assets/img/products-01.jpg" alt="..." />
                     <div class="product-item-description d-flex me-auto">
-                        <div class="bg-faded p-5 rounded"><p class="mb-0"></p></div>
+                        <div class="bg-faded p-5 rounded">
+                            <p class="mb-0">Découvrez nos assurances vie, santé, auto et habitation pour protéger ce qui compte le plus pour vous.</p>
+                            <form action="subscribe.php" method="post" class="mt-3">
+                                <input type="hidden" name="product" value="Assurances vie, santé, auto, habitation">
+                                <label for="name1">Nom :</label>
+                                <input type="text" id="name1" name="name" placeholder="Votre nom" required maxlength="50">
+                                <br />
+                                <label for="email1">Email :</label>
+                                <input type="email" id="email1" name="email" placeholder="Votre adresse email" required maxlength="50">
+                                <br />
+                                <label for="phone1">Téléphone :</label>
+                                <input type="tel" id="phone1" name="phone" placeholder="Votre numéro de téléphone" required maxlength="20">
+                                <br />
+                                <button type="submit">Souscrire</button>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -54,7 +72,22 @@
                     </div>
                     <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="assets/img/products-02.jpg" alt="..." />
                     <div class="product-item-description d-flex ms-auto">
-                        <div class="bg-faded p-5 rounded"><p class="mb-0">Assureur mutualiste de l’économie solidaire, Saint-Gabriel met à la disposition de ses sociétaires une expertise, une capacité d’écoute et une volonté d’innovation reconnues</p></div>
+                        <div class="bg-faded p-5 rounded">
+                            <p class="mb-0">Assureur mutualiste de l’économie solidaire, Saint-Gabriel met à la disposition de ses sociétaires une expertise, une capacité d’écoute et une volonté d’innovation reconnues</p>
+                            <form action="subscribe.php" method="post" class="mt-3">
+                                <input type="hidden" name="product" value="Assurance solidaire">
+                                <label for="name2">Nom :</label>
+                                <input type="text" id="name2" name="name" placeholder="Votre nom" required maxlength="50">
+                                <br />
+                                <label for="email2">Email :</label>
+                                <input type="email" id="email2" name="email" placeholder="Votre adresse email" required maxlength="50">
+                                <br />
+                                <label for="phone2">Téléphone :</label>
+                                <input type="tel" id="phone2" name="phone" placeholder="Votre numéro de téléphone" required maxlength="20">
+                                <br />
+                                <button type="submit">Souscrire</button>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
