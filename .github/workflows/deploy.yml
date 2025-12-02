@@ -3,7 +3,7 @@ name: Deploy to AlwaysData via FTP
 on:
   push:
     branches:
-      - main # branche à déployer
+      - main
 
 jobs:
   ftp-deploy:
@@ -20,13 +20,12 @@ jobs:
           username: ${{ secrets.AD_FTP_USER }}
           password: ${{ secrets.AD_FTP_PASS }}
 
-          # Dossier local à envoyer (ton site)
-          local-dir: ./site/
+          # === TON SITE EST À LA RACINE ===
+          local-dir: ./
 
-          # Dossier du serveur sur AlwaysData
+          # === AlwaysData : dossier principal ===
           server-dir: /www/
 
-          # options
           protocol: ftp
           state-name: .ftp-deploy-sync-state.json
           exclude: |
@@ -34,3 +33,4 @@ jobs:
             **/.github*
             **/node_modules/
             **/*.md
+            site/   # on exclut ton ancien dossier inutile
